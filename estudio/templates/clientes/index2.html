@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block titulo %} Lista de Clientes {% endblock %}
+
+{% block contenido %} 
+
+<div class="card">
+    <a name="" id="" class="aaa" href="{%url 'crearC' %}" role="button">Agregar nuevo Cliente</a>
+    <div class="card-body">
+        <h4 class="title">Lista de clientes</h4>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID Cliente</th>
+                    <th>CUIT</th>
+                    <th>Clave Fiscal</th>
+                    <th>Razon Social</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in clientes %}
+                <tr>
+                    <td>{{cliente.idCli}}</td>
+                    <td>{{cliente.CUIT}}</td>
+                    <td>{{cliente.claveFiscal}}</td>
+                    <td>{{cliente.RazonSocial}}</td>
+                    {%if cliente.isEstado%}
+                        <td>Activo</td>
+                    {%else%}
+                        <td>Inactivo</td>
+                    {%endif%}
+                    <td>
+                        <a name="" id="" class="Edit-Baja" href="{% url 'editarC' cliente.idCli %}" role="button">Editar</a>
+                        |
+                        <a name="" id="" class="Edit-Baja" href="{%url 'crearC' %}" role="button">Dar de Baja</a>                        <!-- <a name="" id="" class="btn btn-danger" href="#" role="button">Baja</a> -->
+                        
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+
+    </div>
+    <div class="card-footer text-muted">
+        
+    </div>
+</div>
+
+
+{% endblock %}

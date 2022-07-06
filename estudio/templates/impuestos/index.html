@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block titulo %} Lista de Impuestos {% endblock %}
+
+{% block contenido %} 
+
+<div class="card">
+    <div class="card-header">
+        <a name="" id="" class="btn btn-success" href="{%url 'crear' %}" role="button">Agregar nuevo Impuesto</a>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Impuestos</h4>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID Impuesto</th>
+                    <th>Nombre Impuesto</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for impuesto in impuestos %}
+                <tr>
+                    <td>{{ impuesto.idImpuesto}}</td>
+                    <td>{{impuesto.nombreImpuesto}}</td>
+                    <td>
+                        <a name="" id="" class="btn btn-info" href="{% url 'editar' impuesto.idImpuesto %}" role="button">Editar</a>
+                        |
+                        <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' impuesto.idImpuesto %}" role="button">Borrar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+
+    </div>
+    <div class="card-footer text-muted">
+        
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block titulo %} Agregar Impuesto {% endblock %}
+
+{% block contenido %} 
+
+<div class="card">
+    <div class="card-header">
+        Crear un Impuesto
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Datos del Impuesto</h4>
+
+        {% include 'impuestos/form.html' %}
+
+
+    </div>
+    <div class="card-footer text-muted">
+        
+    </div>
+</div>
+
+
+{% endblock %}
