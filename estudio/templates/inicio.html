@@ -1,127 +1,69 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Caompatible" content="ie=edge">
     <title>Estudio Contable</title>
-
+   
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway:500,600&display=swap" rel="stylesheet">
-
-    <!-- Materialize.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;570&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
     <!-- CSS Estilos -->
-    <link rel="stylesheet" href="estudio/static/css/estilos.css">
+    <link rel="stylesheet"  href="../static/css/stylesLogin.css">
+    
 </head>
 
 <body>
+    <header>
+        <h1 class="titulo">Estudio contable</h1>
+    </header>
 
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <h1 class="center-align titulo">ESTUDIO CONTABLE</h1>
-
-                <div class="carousel center-align">
-                    <div class="carousel-item">
-                        <img src="../static/img/reloj.png" alt="">
-
-                        <div class="elem">
-                            <h2 class="subtitulo">Impuestos proximos a Vencer</h2>
-                            <div class="linea-division"></div>
-                            <p class="desc">Cosulta la lista de los
-                                impuestos cuyas fechas
-                                de vencimiento se
-                                aproximan.</p>
-                            <div class="linea-division"></div>
-                            <a class="boton" href="#"><span>VER</span></a>
-                        </div>
-
-
+    <div class="body">
+        <div class = "flex-container">
+            <div class = "flex-child2">
+                <div class = "elcosito" style="height: 10px;"></div>
+                <div class= "aboutUs">
+                    <div class = "nosotros">
+                        <h3 class = "subtitulo2">Sobre nosostros</h3>
                     </div>
-
-                    <div class="carousel-item">
-                        <img src="../static/img/calendario.png" alt="">
-                        <div class="elem">
-                            <h2 class="subtitulo">Calendario de Impuestos del mes</h2>
-                            <div class="linea-division"></div>
-                            <p class="desc">Muestra el calendario de vencimientos del mes actual.
-                                Muestra fechas y detalles de modificaciones.</p>
-                            <div class="linea-division"></div>
-                            <a class="boton" href="#"><span>VER</span></a>
-                        </div>
-
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src="../static/img/usuarios.png" alt="">
-
-                        <div class="elem">
-                            <h2 class="subtitulo">GESTION DE USUARIOS</h2>
-                            <div class="linea-division"></div>
-                            <p class="desc">Crear, eliminar o modificar
-                                los usuarios que poseen
-                                acceso al sistema.</p>
-                            <div class="linea-division"></div>
-                            <a class="boton" href="#"><span>VER</span></a>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src="../static/img/clientes.png" alt="">
-
-                        <div class="elem">
-                            <h2 class="subtitulo">GESTION DE CLIENTES</h2>
-                            <div class="linea-division"></div>
-                            <p class="desc">Agregar, eliminar o modificar los datos de clientes del estudio contable</p>
-                            <div class="linea-division"></div>
-                            <a class="boton" href="{% url 'clientes' %}"><span>VER</span></a>                        
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src="../static/img/datosClient.png" alt="">
-
-                        <div class="elem">
-                            <h2 class="subtitulo">DATOS DE
-                                UN CLIENTE</h2>
-                            <div class="linea-division"></div>
-                            <p class="desc">Ver la información de un
-                                cliente a partir de su razón
-                                social.</p>
-                            <div class="linea-division"></div>
-                            <a class="boton" href="#"><span>VER</span></a>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src="../static/img/impuestoCliente.png" alt="">
-
-                        <div class="elem">
-                            <h2 class="subtitulo">IMPUESTOS DE
-                                UN CLIENTE</h2>
-                            <div class="linea-division"></div>
-                            <p class="desc">Ver la lista de los impuestos y sus estados, de un cliente a partir de su
-                                razón social.</p>
-                            <div class="linea-division"></div>
-                            <a class="boton" href="#"><span>VER</span></a>
-                        </div>
-                    </div>
+                    <h6 style="padding: 15px ; color:#c6c6c6 ; font-family:'Raleway' ; font-size:14.5px ; text-align:center;">
+                        Es un sistema que
+                        brinda al usuario una
+                        cómoda experiencia a
+                        la hora de gestionar
+                        los vencimientos de
+                        impuestos de los
+                        clientes de un 
+                        estudio contable.</h6>
                 </div>
-
-
+            </div>
+            <div class = "flex-child">
+                <div class = "elcosito"></div>
+                <h5 class = "subtitulo" style="text-align: center;">Ingreso de usuario</h5>
+                <form name="ingreso">
+                    <div class="flex-child-input">
+                        <br>
+                        <input class="login_input" type="text" name="usuario" id="usuario" placeholder="Usuario" required>
+                        <input class="login_input" type="password" name="contrasenia" id="contrasenia" placeholder="Contraseña" required>
+                    </div>
+                    <div class="flex-child-button">
+                        <button class="boton" onclick="validarFormulario('{% url 'index' %}')"><span>></span></button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 
-    <!-- Materialize.js -->
+    <footer>
+    </footer>
+
+    <!-- JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src='../static/js/main.js'></script>
 
-    <!-- JS Main -->
-    <script src="estudio/js/main.js"></script>
 </body>
-
 </html>
